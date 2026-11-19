@@ -1,3 +1,6 @@
+![ci](https://github.com/shadreckmputu2-droid/studyrag/actions/workflows/ci.yml/badge.svg)
+
+
 # StudyRAG
 
 A retrieval-augmented study assistant that answers questions from your own notes **with citations**, plus an **evaluation harness** that measures answer quality and fails the build when it regresses.
