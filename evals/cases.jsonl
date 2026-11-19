@@ -1,0 +1,18 @@
+# Golden set. gold_contains = phrases a relevant chunk must contain; keywords = terms the answer should include.
+{"id":"os-01","question":"What is the difference between a process and a thread?","gold_contains":["threads of the same process share"],"keywords":["share","stack"]}
+{"id":"os-02","question":"Why is context switching between threads cheaper than between processes?","gold_contains":["address space does not change"],"keywords":["address space"]}
+{"id":"os-03","question":"What is the convoy effect in FCFS scheduling?","gold_contains":["convoy effect"],"keywords":["short","long"]}
+{"id":"os-04","question":"How does aging prevent starvation?","gold_contains":["aging gradually"],"keywords":["priority"]}
+{"id":"os-05","question":"What are the four conditions required for deadlock?","gold_contains":["circular wait"],"keywords":["mutual exclusion","circular wait"]}
+{"id":"os-06","question":"What does the Banker's algorithm do?","gold_contains":["safe state"],"keywords":["safe state"]}
+{"id":"os-07","question":"What does the TLB do?","gold_contains":["translation lookaside buffer"],"keywords":["cache"]}
+{"id":"os-08","question":"What is thrashing?","gold_contains":["thrashing happens"],"keywords":["swapping"]}
+{"id":"de-01","question":"Why is NAND called a universal gate?","gold_contains":["universal gates"],"keywords":["boolean function"]}
+{"id":"de-02","question":"What happens in an SR flip-flop when S and R are both 1?","gold_contains":["invalid state"],"keywords":["invalid"]}
+{"id":"de-03","question":"How many select lines does a 4-to-1 multiplexer need?","gold_contains":["4-to-1 multiplexer needs 2"],"keywords":["2"]}
+{"id":"de-04","question":"Why use a synchronous counter instead of a ripple counter?","gold_contains":["cumulative propagation delay"],"keywords":["propagation delay"]}
+{"id":"de-05","question":"How do you find the two's complement of a number?","gold_contains":["inverting all the bits"],"keywords":["inverting","adding 1"]}
+{"id":"de-06","question":"What is Gray code used for?","gold_contains":["gray code changes only one bit"],"keywords":["one bit"]}
+{"id":"neg-01","question":"What is the capital city of Zimbabwe?","answerable":false}
+{"id":"neg-02","question":"How do I deploy a Kubernetes cluster?","answerable":false}
+{"id":"neg-03","question":"Which sorting algorithm is fastest for nearly sorted data?","answerable":false}

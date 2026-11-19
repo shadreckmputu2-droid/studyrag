@@ -1,0 +1,6 @@
+.studyrag/
+evals/runs/
+__pycache__/
+*.egg-info/
+.venv/
+.env

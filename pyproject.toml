@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "studyrag"
+version = "0.1.0"
+description = "RAG study assistant with citations, plus an evaluation harness that catches regressions"
+requires-python = ">=3.10"
+dependencies = ["pypdf>=4.0"]
+
+[project.optional-dependencies]
+llm = ["anthropic>=0.40"]
+dense = ["sentence-transformers>=3.0", "numpy"]
+api = ["fastapi>=0.110", "uvicorn>=0.29"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+studyrag = "studyrag.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
