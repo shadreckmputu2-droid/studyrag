@@ -16,3 +16,38 @@
 {"id":"neg-01","question":"What is the capital city of Zimbabwe?","answerable":false}
 {"id":"neg-02","question":"How do I deploy a Kubernetes cluster?","answerable":false}
 {"id":"neg-03","question":"Which sorting algorithm is fastest for nearly sorted data?","answerable":false}
+{"id":"os-09","question":"What are the five main states in a process lifecycle?","gold_contains":["new, ready, running, waiting, and terminated"],"keywords":["ready","running","waiting"]}
+{"id":"os-10","question":"What does the CPU scheduler do when selecting a process?","gold_contains":["moves a process from ready to running"],"keywords":["ready","running","CPU"]}
+{"id":"os-11","question":"When does a running process enter the waiting state?","gold_contains":["when it requests I/O"],"keywords":["I/O","waiting"]}
+{"id":"os-12","question":"How does a process return to the ready state after an I/O operation?","gold_contains":["returns to ready when the I/O completes"],"keywords":["ready","I/O"]}
+{"id":"os-13","question":"What is the main advantage of Shortest Job First scheduling?","gold_contains":["minimises average waiting time"],"keywords":["waiting time"]}
+{"id":"os-14","question":"What problem can Shortest Job First scheduling cause for long processes?","gold_contains":["starvation of long processes"],"keywords":["starvation","long"]}
+{"id":"os-15","question":"How does Round Robin scheduling allocate CPU time?","gold_contains":["fixed time quantum"],"keywords":["time quantum","process"]}
+{"id":"os-16","question":"What happens when a Round Robin process uses up its time quantum?","gold_contains":["preempts it when the quantum expires"],"keywords":["preempts","quantum"]}
+{"id":"os-17","question":"Why can priority scheduling cause starvation?","gold_contains":["starve low-priority processes"],"keywords":["starvation","priority"]}
+{"id":"os-18","question":"How can deadlock be prevented by changing its necessary conditions?","gold_contains":["Breaking any one condition prevents deadlock"],"keywords":["condition","deadlock"]}
+{"id":"os-19","question":"How does paging divide physical and logical memory?","gold_contains":["fixed-size frames and logical memory into pages"],"keywords":["frames","pages"]}
+{"id":"os-20","question":"What does a page table do in memory management?","gold_contains":["maps page numbers to frame numbers"],"keywords":["page numbers","frame numbers"]}
+{"id":"os-21","question":"What is a race condition in concurrent programming?","gold_contains":["result depends on the order in which threads access shared data"],"keywords":["threads","shared data"]}
+
+{"id":"de-07","question":"When does an XOR gate produce an output of 1?","gold_contains":["XOR outputs 1 when its inputs differ"],"keywords":["inputs","differ"]}
+{"id":"de-08","question":"What do De Morgan's theorems describe?","gold_contains":["complement of an AND equals the OR of the complements"],"keywords":["complement","OR"]}
+{"id":"de-09","question":"What happens to the output of a JK flip-flop when both inputs are 1?","gold_contains":["when J and K are both 1 it toggles its output"],"keywords":["toggles","output"]}
+{"id":"de-10","question":"How does a D flip-flop store information?","gold_contains":["copies its D input to the output on the active clock edge"],"keywords":["D input","clock edge"]}
+{"id":"de-11","question":"What is the main use of a D flip-flop?","gold_contains":["used to store one bit in registers"],"keywords":["one bit","registers"]}
+{"id":"de-12","question":"How does a T flip-flop behave when T is 1?","gold_contains":["toggles on each clock pulse when T is 1"],"keywords":["toggles","clock pulse"]}
+{"id":"de-13","question":"What is the function of a multiplexer?","gold_contains":["selects one of many inputs using select lines"],"keywords":["inputs","select lines"]}
+{"id":"de-14","question":"How many outputs does a decoder with a 3-bit input produce?","gold_contains":["one of 2^n outputs"],"keywords":["2^n","outputs"]}
+{"id":"de-15","question":"What are the two outputs produced by a half adder?","gold_contains":["produces a sum and a carry"],"keywords":["sum","carry"]}
+{"id":"de-16","question":"Which logic gates are used to produce the sum and carry in a half adder?","gold_contains":["sum is XOR and the carry is AND"],"keywords":["XOR","AND"]}
+{"id":"de-17","question":"What additional input does a full adder accept compared with a half adder?","gold_contains":["accepts a carry-in"],"keywords":["carry-in"]}
+{"id":"de-18","question":"What does a mod-N counter count through?","gold_contains":["counts through N states"],"keywords":["N states"]}
+{"id":"de-19","question":"How does a shift register move stored information?","gold_contains":["moves its stored bits along by one position"],"keywords":["stored bits","clock pulse"]}
+
+{"id":"neg-04","question":"Who invented the Python programming language?","answerable":false}
+{"id":"neg-05","question":"What is the capital city of South Africa?","answerable":false}
+{"id":"neg-06","question":"Explain how database normalization works.","answerable":false}
+{"id":"neg-07","question":"How do I write a Java program using inheritance?","answerable":false}
+{"id":"neg-08","question":"What is the latest version of Windows?","answerable":false}
+{"id":"neg-09","question":"Explain how artificial intelligence models are trained.","answerable":false}
+{"id":"neg-10","question":"What are the current tuition fees at Midlands State University?","answerable":false}

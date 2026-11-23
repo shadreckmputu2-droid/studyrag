@@ -13,7 +13,12 @@ STOP = set(
 
 
 def tokenize(text: str) -> list[str]:
-    return [w for w in re.findall(r"[a-z0-9]+", text.lower()) if w not in STOP and (len(w) > 1 or w.isdigit())]
+    text = text.lower().replace("'", "").replace("\u2019", "")  # don't -> dont, student's -> students
+    tokens = re.findall(r"[a-z0-9]+", text)
+    return [
+        w for w in tokens
+        if w not in STOP and (len(w) > 1 or w.isdigit() or w in {"d", "t", "s", "r"})
+    ]
 
 
 @dataclass

@@ -9,36 +9,51 @@ SYSTEM = (
     "Cite every claim with its source number like [1] or [2]. "
     "If the sources do not contain the answer, reply exactly: I don't know based on the notes."
 )
+
 ABSTAIN = "I don't know based on the notes."
 
 
 def build_prompt(question: str, hits: list[Hit]) -> str:
-    srcs = "\n\n".join(f"[{i}] ({h.chunk.source}, p.{h.chunk.page})\n{h.chunk.text}" for i, h in enumerate(hits, 1))
+    srcs = "\n\n".join(
+        f"[{i}] ({h.chunk.source}, p.{h.chunk.page})\n{h.chunk.text}"
+        for i, h in enumerate(hits, 1)
+    )
     return f"Sources:\n{srcs}\n\nQuestion: {question}"
 
 
 class ExtractiveLLM:
-    """No API needed: returns the best-matching sentences from the top sources, with citations."""
+    """No API needed: returns the most relevant sentences from the top sources, with citations."""
 
     name = "extractive"
 
     def generate(self, question: str, hits: list[Hit]) -> str:
         q = set(tokenize(question))
         scored = []
+
         for i, h in enumerate(hits, 1):
             for s in re.split(r"(?<=[.!?])\s+|\n+", h.chunk.text):
                 overlap = len(q & set(tokenize(s)))
                 if overlap:
                     scored.append((overlap, -i, s.strip(), i))
+
         if not scored:
             return ABSTAIN
+
+        scored.sort(reverse=True)
+        best_score = scored[0][0]
+
         out, seen = [], set()
-        for _, _, sent, i in sorted(scored, reverse=True):
+        for overlap, _, sent, i in scored:
+            if overlap / best_score < 0.8:
+                continue
+
             if sent not in seen:  # overlapping chunks repeat sentences
                 seen.add(sent)
                 out.append(f"{sent} [{i}]")
+
             if len(out) == 2:
                 break
+
         return " ".join(out)
 
 
