@@ -35,13 +35,13 @@ question -> retrieve top-k -> guardrail -> generate (Claude or offline) -> verif
 
 Results are compared to `evals/baseline.json`. If any metric drops more than 2 points, or a previously passing case now fails, `--fail-on-regression` exits non-zero and **CI blocks the change**. An HTML report is written to `evals/report.html`.
 
-### Current results (BM25 + extractive, 17 cases)
+### Current results (BM25 + extractive, 50 cases)
 
-hit@k 100%, MRR 1.00, keyword coverage 100%, citation validity 100%, abstention accuracy 100%.
+hit@k 100%, MRR 98.8%, keyword coverage 100%, citation validity 100%, abstention accuracy 100%.
 
 **Found and fixed with the harness:** `neg-03` ("fastest sorting algorithm for nearly sorted data") is not in the notes, but the single word "algorithm" matched the Banker's algorithm paragraph, so keyword retrieval answered anyway. Abstention accuracy was 94%. I added a coverage guardrail: the retrieved text must contain at least 40% of the question's key terms, otherwise the assistant abstains. Abstention accuracy went 94% -> 100% with no change to hit@k or answer quality, and `test_single_shared_word_is_not_enough_to_answer` locks it in.
 
-**Honest caveat:** the golden set is small (17 cases), and the 0.4 threshold sits in the gap between the weakest answerable question (0.50) and the strongest unanswerable one (0.33). Growing the set to 50+ questions is the way to confirm the threshold generalises; `min_coverage` is a constructor argument.
+**Honest caveat:** the golden set is small (50 cases), and the 0.4 threshold sits in the gap between the weakest answerable question (0.50) and the strongest unanswerable one (0.33). Growing the set to 50+ questions is the way to confirm the threshold generalises; `min_coverage` is a constructor argument.
 
 ## Quick start (Windows/WSL2 or Linux/macOS)
 
